@@ -79,7 +79,7 @@ const Carousel = () => {
               <h2 className="text-3xl md:text-5xl font-bold mb-2">{slide.title}</h2>
               <p className="text-lg md:text-xl mb-4 text-gray-200">{slide.subtitle}</p>
               <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                Watch Now
+                Go to Event
               </button>
             </div>
           </div>
