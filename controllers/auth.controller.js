@@ -3,9 +3,8 @@ import bcrypt from "bcryptjs";
 import { generateToken } from "../lib/jwt.js";
 
 export const signUp = async (req, res) => {
-  const { fullName, email, password } = req.body;
-
   try {
+    const { fullName, email, password, role } = req.body;
     if (!fullName || !email || !password) return res.status(400).json({ message: "Please fill all fields" });
 
     if (password.length < 6) return res.status(400).json({ message: "Password must be 6+ characters" });
@@ -18,8 +17,8 @@ export const signUp = async (req, res) => {
     const newUser = await User.create({
       fullName,
       email,
-      password: hashedPassword,
-      role: "user", // default role
+      password: hashedPassword, 
+      role
     });
 
     generateToken(newUser, res);
