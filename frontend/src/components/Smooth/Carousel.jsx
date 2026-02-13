@@ -55,7 +55,7 @@ const Carousel = () => {
 
   return (
     <div 
-      className="relative w-full h-[70vh] overflow-hidden"
+      className="relative w-full h-[70vh] overflow-hidden rounded-2xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -87,7 +87,7 @@ const Carousel = () => {
       </div>
 
       {/* Navigation Arrows */}
-      <button
+      {/* <button
         onClick={goToPrevious}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors backdrop-blur-sm"
       >
@@ -103,7 +103,7 @@ const Carousel = () => {
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
-      </button>
+      </button> */}
 
       {/* Indicators */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">

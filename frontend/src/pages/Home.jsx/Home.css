@@ -1,13 +1,22 @@
 /* Home Page Styles */
 .home-container {
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: #ffffff;
+  padding-top: 2px;
 }
+.nav-bar{
+  margin-bottom: 50px;
 
+}
+.sectionss{
+  padding: 0 100px;
+}
 .home-hero {
   position: relative;
   width: 100%;
   overflow: hidden;
+
+
 }
 
 /* Section Styles */
@@ -285,5 +294,15 @@
   .event-date {
     margin-bottom: 1rem;
   }
+}
+
+/* Hide scrollbar for clubs carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 

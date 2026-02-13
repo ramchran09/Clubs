@@ -1,0 +1,298 @@
+/* .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRzvMenDg04cYuj__g8M4m-Yrojbh8w71QQ&s");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  padding: 20px;
+}
+
+
+.login-card {
+background: linear-gradient(135deg, #bfe5e941 0%, #0f6b8f 100%);
+  border-radius: 0 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+} II
+
+.login-card h2 {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.login-subtitle {
+  color: #666;
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+.error-message {
+  background: #fee;
+  color: #c00;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.login-button {
+  background: linear-gradient(135deg, #6be3f000 0%, #0f6b8f 100%);
+  color: white;
+  border: 1px solid rgb(111, 111, 216);
+
+  padding: 14px 24px;
+
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.login-button:hover:not(:disabled) {
+  opacity: 0.7;
+  color: #097674;
+}
+
+.login-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  margin: 24px 0 0;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+.sign-up-button {
+  font-weight: bold;
+  border: 0.7px solid rgb(65, 65, 173);
+  border-radius: 20px; 
+  background: linear-gradient(135deg, #6be3f000 0%, #0f6b8f 100%);
+
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.sign-up-button:hover {
+  opacity: 0.7;
+}
+ */
+/* Full-Screen Background */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRzvMenDg04cYuj__g8M4m-Yrojbh8w71QQ&s");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  padding: 20px;
+}
+
+
+/* iPhone Liquid Glass Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+}
+
+
+/* Header */
+.login-card h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.login-subtitle {
+  color: #e4e4e4;
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+
+/* Error Message */
+.error-message {
+  background: rgba(255, 100, 100, 0.25);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 100, 100, 0.4);
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  color: #fff;
+
+  transition: all 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Button – Liquid Glass Style */
+.login-button {
+  background: rgba(0, 157, 255, 0.3);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 24px;
+
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-button:hover:not(:disabled) {
+  background: rgba(0, 157, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.login-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Footer */
+.login-footer {
+  margin: 24px 0 0;
+  text-align: center;
+  color: #ffffffcc;
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: #b7eaff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* Sign Up Button */
+.sign-up-button {
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sign-up-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
