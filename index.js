@@ -6,7 +6,8 @@ import cors from 'cors';
 import connectDB from './lib/db.js';
 import authRoutes from './routes/auth.route.js'
 import clubRoutes from './routes/club.route.js'
-
+import clubAdminRoutes from './routes/clubadmin.route.js';
+import superAdmin from './controllers/superadmin.controller.js'
 dotenv.config();
 connectDB();
 
@@ -18,7 +19,9 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/club", clubRoutes);
+app.use("/api/clubadmin", clubAdminRoutes);
 
+app.use("/api/clubs", superAdmin);
 
 
 
