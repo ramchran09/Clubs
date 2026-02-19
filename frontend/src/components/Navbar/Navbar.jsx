@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
 const Navbar = () => {
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout, isAdmin } = useAuth();
   const location = useLocation();
-  const na="Revanth";
+  const navigate = useNavigate();
+  
   const handleClubsClick = (e) => {
     // If we're on the home page, scroll to clubs section
     if (location.pathname === '/') {
@@ -16,85 +17,106 @@ const Navbar = () => {
       }
     }
   };
-  
 
+  const handleLogout = async () => {
+    await logout();
+    navigate('/');
+  };
 
   return (
     <>
-      <header className=" flex border-b py-4 px-4 sm:px-10  rounded-md bg-linear-to-r from-cyan-200 to-blue-300 font-sans min-h-[70px] tracking-wide z-50">
-        <div className="flex items-center w-full">
+     <header className="sticky top-4 z-50">
+  <div className="backdrop-blur-xl bg-white/40 shadow-lg rounded-2xl px-8 py-1 flex items-center justify-between border border-white/30">
 
+    {/* Logo */}
+    <Link to="/">
+      <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent tracking-wide">
+        ClubZ0ne
+      </h3>
+    </Link>
 
-          <Link to="/">
-            <h3 className="text-2xl text-[hsla(0,96%,49%,1)] font-semibold">ClubZ0ne</h3>
+    {/* Navigation */}
+    <nav className="hidden lg:flex ">
+      <ul className="flex gap-10 text-[15px] font-semibold">
+        <li>
+          <Link
+            to="/"
+            className={`transition duration-300 hover:text-blue-600 ${
+              location.pathname === '/' ? 'text-blue-600' : 'text-gray-700'
+            }`}
+          >
+            Home
           </Link>
+        </li>
 
+        <li>
+          <Link
+            to="#clubs"
+            onClick={handleClubsClick}
+            className="transition duration-300 hover:text-blue-600 text-gray-700"
+          >
+            Clubs
+          </Link>
+        </li>
 
-          <nav className="hidden lg:flex mx-auto">
-            <ul className="flex gap-x-10 border-2 border-[#485d76b6] rounded-full  py-2 px-17  " >
-              <li>
-                <Link
-                  to="/"
-                  className={`hover:text-[#007bff] font-bold text-[15px] ${
-                    location.pathname === '/' ? 'text-[#007bff]' : 'text-gray-600'
-                  }`}
-                >
-                  Home
-                </Link>
-              </li>
+        <li>
+          <Link
+            to="/posts"
+            className="transition duration-300 hover:text-blue-600 text-gray-700"
+          >
+            Posts
+          </Link>
+        </li>
+      </ul>
+    </nav>
 
-              <li>
-                <Link
-                  to="#Clubs"
-                  onClick={handleClubsClick}
-                  className="hover:text-[#007bff] text-gray-600 font-bold text-[15px]"
-                >
-                  Clubs
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/posts"
-                  className="hover:text-[#007bff] text-gray-600 font-bold text-[15px]"
-                >
-                  Posts
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-
-          <div className="flex items-center justify-end space-x-6 ml-auto w-full max-w-48">
-
-            {isAuthenticated ? (
-              <>
-                <span className="hover:border-[#007bff] text-pink-950  border-[#5f9ee1] border-2 px-3 py-2 rounded-full bg-[#0f94c1e1] font-bold text-[15px]">
-                   {user?.username?.slice(0,4) || user?.name || na?.slice(0,1)}
-                </span>
-                <button
-                  onClick={logout}
-                  className="hover:text-[#ff0000] text-red-600 border-2 px-3 py-2 rounded-full font-bold text-[15px]"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="hover:text-[#3697ec] text-[#156dd9e1] border-2 px-3 py-2 rounded-full  font-bold text-[15px]"
-                >
-                  Log in
-                </Link>
-              </>
+    {/* Right Section */}
+    <div className="flex items-center gap-4">
+      {isAuthenticated ? (
+        <>
+          {/* User Info with Role Badge */}
+          <div className="flex items-center gap-5">
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-4 py-2 rounded-full font-bold shadow-md">
+              {user?.fullName?.slice(0, 10) || "User"}
+            </span>
+            
+            {/* Admin Badge */}
+            {isAdmin && (
+              <span className="animate-pulse  hover:bg-red-500 hover:text-amber-50  text-red-600  px-2 py-1 rounded-full text-xs  font-bold shadow-md">
+                A
+              </span>
             )}
-
           </div>
+
+          <button
+            onClick={handleLogout}
+            className="border border-red-500 text-red-500 px-4 py-2 rounded-full font-semibold hover:bg-red-500 hover:text-white transition duration-300"
+          >
+            Logout
+          </button>
+        </>
+      ) : (
+        <div className="flex items-center gap-3">
+          <Link
+            to="/login"
+            className="text-gray-700 font-semibold hover:text-blue-600 transition duration-300"
+          >
+            Log in
+          </Link>
+          <Link
+            to="/signup"
+            className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-4 py-1 rounded-full font-semibold shadow-2xl hover:scale-105 transition duration-300"
+          >
+            Sign Up
+          </Link>
         </div>
-      </header>
+      )}
+    </div>
+  </div>
+</header>
     </>
   )
 }
 
 export default Navbar
+

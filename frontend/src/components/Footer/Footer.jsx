@@ -2,41 +2,56 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 mt-20">
-      <div className="max-w-screen-lg py-10 px-4 sm:px-6 text-gray-800 sm:flex justify-between mx-auto">
-        
-        {/* Menu */}
-       
+    <footer className="bg-gradient-to-br from-blue-100 to-cyan-100 mt-24 pt-14 pb-10">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-gray-700">
 
-        {/* Center Section */}
-        <div className="p-5 sm:w-7/12 border-r text-center">
-          <h3 className="font-bold text-xl text-indigo-600 mb-4">Componentity</h3>
-          <p className="text-gray-500 text-sm mb-10">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        {/* About */}
+        <div>
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">
+            ClubZ0ne
+          </h2>
+          <p className="text-sm leading-relaxed">
+            ClubZ0ne is a centralized digital platform built for college students 
+            to explore clubs, join events, and stay connected with campus activities. 
+            Bringing all communities together in one place.
           </p>
         </div>
 
-        {/* Contact */}
-        <div className="p-5 sm:w-3/12">
-          <div className="text-sm uppercase text-indigo-600 font-bold">Contact Us</div>
-          <ul>
-            <li className="my-2">
-              <a className="hover:text-indigo-600" href="#">XXX XXXX, Floor 4 San Francisco, CA</a>
-            </li>
-            <li className="my-2">
-              <a className="hover:text-indigo-600" href="#">contact@company.com</a>
-            </li>
+        {/* Quick Links */}
+        <div>
+          <h3 className="font-semibold text-lg text-blue-600 mb-4">
+            Quick Links
+          </h3>
+          <ul className="space-y-2 text-sm">
+            <li className="hover:text-blue-600 cursor-pointer">Home</li>
+            <li className="hover:text-blue-600 cursor-pointer">Clubs</li>
+            <li className="hover:text-blue-600 cursor-pointer">Events</li>
+            <li className="hover:text-blue-600 cursor-pointer">Posts</li>
           </ul>
         </div>
+
+        {/* College Details */}
+        <div>
+          <h3 className="font-semibold text-lg text-blue-600 mb-4">
+            Screenindhi Hyderabad College
+          </h3>
+          <p className="text-sm">
+            📍 Hyderabad, Telangana, India
+          </p>
+          <p className="text-sm mt-2">
+            📧 clubzone@screenindhi.edu.in
+          </p>
+          <p className="text-sm mt-2">
+            📞 +91 98765 43210
+          </p>
+        </div>
+
       </div>
 
-
-      
-
-
+      <div className="text-center text-xs text-gray-600 mt-12">
+        © {new Date().getFullYear()} ClubZ0ne | Built with ❤️ for Campus Innovation
       </div>
-
+    </footer>
   );
 };
 
