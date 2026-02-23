@@ -50,7 +50,6 @@ export const removeMember = async (req, res) => {
     });
   }
 };
-
 export const updateMemberRole = async (req, res) => {
   try {
     const { clubId, userId } = req.params;
@@ -73,7 +72,7 @@ export const updateMemberRole = async (req, res) => {
     }
 
     const user = await User.findById(userId);
-    const club = await Club.findById(clubId);
+    const club = await Club.findById(clubId); 
 
     if (!user || !club) {
       return res.status(404).json({ message: "User or Club not found" });
@@ -84,37 +83,13 @@ export const updateMemberRole = async (req, res) => {
     );
 
     if (!clubEntry) {
-      user.clubs.push({
-        club: club._id,
-        role,
-        canEdit
-      });
+      user.clubs.push({ club: club._id, role, canEdit });
     } else {
       clubEntry.role = role;
       clubEntry.canEdit = canEdit;
     }
 
-    club.members = club.members.filter(
-      id => id.toString() !== userId
-    );
-
-    club.heads = club.heads.filter(
-      id => id.toString() !== userId
-    );
-
-    club.viceHeads = club.viceHeads.filter(
-      id => id.toString() !== userId
-    );
-
-    if (role === "Head") {
-      club.heads.push(user._id);
-    } else if (role === "Vice Head") {
-      club.viceHeads.push(user._id);
-    } else {
-      club.members.push(user._id);
-    }
-
-    await Promise.all([user.save(), club.save()]);
+    await Promise.all([user.save()]);
 
     return res.status(200).json({
       message: "Member added or updated successfully"
@@ -125,8 +100,7 @@ export const updateMemberRole = async (req, res) => {
       message: "Failed to update member"
     });
   }
-};
-
+}; 
 export const deletePost = async (req, res) => {
   try {
     const { clubId, postId } = req.params;
@@ -193,7 +167,6 @@ export const createPost = async (req, res) => {
     return res.status(500).json({ message: "Failed to create post" });
   }
 };
-
 export const deleteEvent = async (req, res) => {
   try {
     const { clubId, eventId } = req.params;
@@ -263,7 +236,6 @@ export const createEvent = async (req, res) => {
     return res.status(500).json({ message: "Failed to create event" });
   }
 };
-
 export const updateClubProfile = async (req, res) => {
   try {
     const { clubId } = req.params;
