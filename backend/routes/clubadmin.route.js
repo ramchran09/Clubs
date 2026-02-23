@@ -20,4 +20,4 @@ router.delete("/:clubId/posts/:postId", protectRoute, verifyClubEditAccess, dele
 router.delete("/:clubId/members/:userId", protectRoute, verifyClubEditAccess, removeMember);
 router.patch("/:clubId/members/:userId/role", protectRoute, verifyClubEditAccess, updateMemberRole);
 
-export default router;
+export default router; 

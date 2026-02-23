@@ -9,6 +9,7 @@ const clubSchema = new mongoose.Schema(
         image: { type: String,},
         description: { type: String,},
         aboutUs: { type: String },
+        //clubAdmin : { type : String},
 
         heads: [{ type: mongoose.Schema.Types.ObjectId, ref:"User"}],
         viceHeads: [{type: mongoose.Schema.Types.ObjectId, ref:"User"}],
