@@ -26,18 +26,6 @@ export const removeMember = async (req, res) => {
       c => c.club.toString() !== clubId
     );
 
-    club.members = club.members.filter(
-      id => id.toString() !== userId
-    );
-
-    club.heads = club.heads.filter(
-      id => id.toString() !== userId
-    );
-
-    club.viceHeads = club.viceHeads.filter(
-      id => id.toString() !== userId
-    );
-
     await Promise.all([user.save(), club.save()]);
 
     return res.status(200).json({
@@ -101,6 +89,8 @@ export const updateMemberRole = async (req, res) => {
     });
   }
 }; 
+
+  
 export const deletePost = async (req, res) => {
   try {
     const { clubId, postId } = req.params;

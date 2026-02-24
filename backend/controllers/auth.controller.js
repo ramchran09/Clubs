@@ -4,6 +4,7 @@ import { generateToken } from "../lib/jwt.js";
 
 export const signUp = async (req, res) => {
   try {
+    console.log("Requested for Signup");
     const { fullName, email, password, role } = req.body;
     if (!fullName || !email || !password) return res.status(400).json({ message: "Please fill all fields" });
 
